@@ -1,4 +1,4 @@
-.login-overlay{
+.background-overlay{
     z-index: 0;
     position: absolute;
     top: 0;
@@ -7,7 +7,7 @@
     width:100%;
     background-color: rgba(0,153,204,.8);
 }
-.login-container{
+.popup-container{
     margin-top: 15px;
     border-radius: 15px;
     background-color: #DDDDDD;
@@ -18,11 +18,6 @@
     margin-top: 10px;
     padding-left: 25px;
 }
-.login-header{
-    background-color: #F5F5F5;
-    padding: 10px 15px;
-}
-.login-bt{}
 .form-signin {
   max-width: 330px;
   padding: 15px;

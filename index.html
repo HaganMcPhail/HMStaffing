@@ -10,41 +10,91 @@
         <![endif]-->
         <link href="lib/css/bootstrap.min.css" rel="stylesheet">
         <link href="lib/css/main.css" rel="stylesheet">
-        <link href="lib/css/login.css" rel="stylesheet">
+        <link href="lib/css/login-view.css" rel="stylesheet">
+        <link href="lib/css/employee-view.css" rel="stylesheet">
         <script src="lib/js/jquery-1.11.2.min.js"></script>
+        <script src="employees/Employees2.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     </head>
     <body>
-        <div class="login-overlay">&nbsp;</div>
+        <div class="background-overlay">&nbsp;</div>
         <div class="container">
             <div class="row">
                 <div class="row">
-                    <div class="col-xs-12 logo-container">
-                        <img src="lib/img/logo.png" style="height:80px;" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 login-container">
-                        <form class="form-signin">
-                            <h2 class="form-signin-heading">Sign In</h2>
-                            <label for="inputEmail" class="sr-only">Email Address</label>
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" required="" autofocus="">
-                            <label for="inputPassword" class="sr-only">Password</label>
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="remember-me"> Remember me
-                                </label>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 popup-container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form class="form-employee form-horizontal">
+                                    <fieldset>
+                                        <h2 class="form-heading employee-name">Hagan McPhail</h2>
+                                        <hr>
+                                        <div class="form-group name-hide">
+                                            <label class="col-md-4 control-label" for="title">First Name :</label>  
+                                            <div class="col-md-6">
+                                                <input id="first_name" name="first-name" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group name-hide">
+                                            <label class="col-md-4 control-label" for="title">Last Name :</label>  
+                                            <div class="col-md-6">
+                                                <input id="last_name" name="last-name" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="title">Title :</label>  
+                                            <div class="col-md-6">
+                                                <input id="job_title" name="title" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="city">City :</label>  
+                                            <div class="col-md-6">
+                                                <input id="city" name="city" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="state">State :</label>  
+                                            <div class="col-md-6">
+                                                <input id="state" name="state" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="email">Email :</label>  
+                                            <div class="col-md-6">
+                                                <input id="email" name="email" type="text" class="form-control input-md" disabled="false">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="phone1">Primary Phone :</label>  
+                                            <div class="col-md-6">
+                                                <input id="phone1" name="phone1" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="phone2">Secondary Phone :</label>  
+                                            <div class="col-md-6">
+                                                <input id="phone2" name="phone2" type="text" class="form-control input-md" disabled="">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
                             </div>
-                            <button class="btn btn-lg btn-primary btn-block login-btn" type="submit">Sign in</button>
-                        </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <button class="btn btn-lg btn-primary btn-block employee-edit-btn" type="button">Edit</button>
+                                <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Save</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Cancel</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Delete</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- <div class="col-xs-4" style="height:300px;background-color:#0099CC;"></div>
-                <div class="col-xs-4" style="height:300px;background-color:#BBBBBB;"></div>
-                <div class="col-xs-4" style="height:300px;background-color:#333333;"></div> -->
             </div>
         </div>
         <!-- script references -->
