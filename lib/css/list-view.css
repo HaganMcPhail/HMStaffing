@@ -98,7 +98,6 @@ header.header{
     word-wrap: break-word;
 }
 
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     div[class^="col"]{padding-left:15px; padding-right:15px;}
