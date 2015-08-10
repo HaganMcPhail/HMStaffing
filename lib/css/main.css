@@ -15,9 +15,9 @@ html, body{
     background-size: cover;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
-    background-image:url(../img/index.jpg);
+    background-image:url(../img/bg.png);
 }
-.background-overlay{
+/*.background-overlay{
     z-index: 0;
     position: absolute;
     top: 0;
@@ -26,7 +26,7 @@ html, body{
     width:100%;
     background-color: rgba(0,153,204,.65);
     overflow: hidden;
-}
+}*/
 .popup-container{
     margin-top: 15px;
     border-radius: 15px;
