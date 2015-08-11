@@ -1,6 +1,6 @@
 /*blue: rgba(0,153,204,1) #0099cc*/
 html, body{
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
     min-height: 100vh;
     width:100%;
@@ -44,7 +44,11 @@ header.header{
     margin-top:25px;
     padding-left:20px;
     padding-right:20px;
-    font-size: 20px;
+    font-size: 16px;
+}
+.employee-list-container{
+    margin-top:20px;
+    font-size: 15px;
 }
 .search input, .search .btn{
     height:50px;
@@ -71,20 +75,25 @@ header.header{
 .label-input{
     color:#0099CC;
     font-weight: bold;
-    font-size:18px;
+    font-size:16px;
 }
 .employee-record{
     margin-left:-40px;
     margin-right:-40px;
-    padding:10px 25px;
-    padding-bottom: 20px;
+    padding:0px 25px;
+    padding-bottom: 15px;
+    cursor:pointer;
 }
 .employee-record > div > .row > div{
     margin-top:15px;
 }
-.fa-trash-o{
-    font-size:45px;
+.employee-record .fa-trash-o{
+    font-size:25px;
     color:#0099CC;
+    cursor:pointer;
+}
+.employee-record .fa-trash-o:hover{
+    color:#333333;
 }
 .odd{
     background-color:#F5F5F5;
@@ -96,6 +105,12 @@ header.header{
 }
 .wrap{
     word-wrap: break-word;
+}
+.list-header{
+    padding-top: 5px;
+    padding-bottom:10px;
+    color: #0099CC;
+    font-size:18px;
 }
 
 /* Small devices (tablets, 768px and up) */
