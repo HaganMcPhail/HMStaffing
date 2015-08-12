@@ -15,12 +15,6 @@ app.view.listView = {
             });
         }
 
-        function getEmployeesEvent() {
-            $('#main').trigger({
-                type: 'getEmployees'
-            });
-        }
-
         function getEmployeeEvent(id) {
             $('#main').trigger({
                 type: 'getEmployee',

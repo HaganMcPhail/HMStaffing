@@ -1,0 +1,89 @@
+<div class="modal fade {{city}}" id="myModal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <form class="form-employee form-horizontal">
+                                <fieldset>
+                                    <h2 class="form-heading employee-name"></h2>
+                                    <hr class="faded">
+                                    <div class="form-group name-hide">
+                                        <label class="col-md-4 control-label" for="title">First :</label>  
+                                        <div class="col-md-6">
+                                            <input id="first_name" name="first-name" type="text" value="{{first_name}}" class="form-control input-md" disabled="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group name-hide">
+                                        <label class="col-md-4 control-label" for="title">Last :</label>  
+                                        <div class="col-md-6">
+                                            <input id="last_name" name="last-name" type="text" class="form-control input-md" disabled="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="title">Title :</label>  
+                                        <div class="col-md-6">
+                                            <input id="job_title" name="title" type="text" class="form-control input-md" disabled="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="city">City :</label>  
+                                        <div class="col-md-6">
+                                            <input id="city" name="city" type="text" class="form-control input-md" value="{{city}}" disabled="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="state">State :</label>  
+                                        <div class="col-md-6">
+                                            <input id="state" name="state" type="text" class="form-control input-md" disabled="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="email">Email :</label>  
+                                        <div class="col-md-6">
+                                            <input id="email" name="email" type="text" class="form-control input-md" disabled="false" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="phone1">Phone :</label>  
+                                        <div class="col-md-6">
+                                            <input id="phone1" name="phone1" type="text" class="form-control input-md bfh-phone" data-format="(ddd) ddd-dddd" disabled="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="phone2">Phone 2 :</label>  
+                                        <div class="col-md-6">
+                                            <input id="phone2" name="phone2" type="text" class="form-control input-md bfh-phone" data-format="(ddd) ddd-dddd" disabled="" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row edit-btn-container">
+                                <div class="col-xs-12">
+                                    <button class="btn btn-lg btn-primary btn-block employee-edit-btn" type="button">Edit &nbsp; &nbsp; <i class="fa fa-pencil fa-fw"></i></button>
+                                </div>
+                            </div>
+                            <div class="row save-btn-container">
+                                <div class="col-sm-4">
+                                    <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Save &nbsp; &nbsp; <i class="fa fa-floppy-o fa-fw"></i></button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Cancel &nbsp; &nbsp; <i class="fa fa-ban fa-fw"></i></button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Delete &nbsp; &nbsp; <i class="fa fa-trash-o fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

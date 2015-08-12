@@ -1,5 +1,28 @@
 app.view.employeeController = {
-    create: function () {
-        return {};
+    create: function (employeeView) {
+        var employeeController = Object.create(app.usecase.usecaseBase.create());
+
+        function getEmployeeEventHandler(e) {
+            
+        }
+
+        function initEventHandlers() {
+            // employeeController.initEventHandler('addEmployee', addEmployeeEventHandler);
+            // employeeController.initEventHandler('searchEmployees', searchEmployeesEventHandler);
+            //employeeController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
+            employeeController.initEventHandler('getEmployee', getEmployeeEventHandler);
+        }
+
+        employeeController.execute = function (employeeReturned) {
+
+                employeeView.getViewData().data.employee = employeeReturned;
+                employeeView.render();
+                // jQuery.noConflict();
+                // $('#myModal').modal('show');
+                employeeView.initEventHandlers();
+                initEventHandlers();
+        }
+
+        return employeeController;
     }
 };

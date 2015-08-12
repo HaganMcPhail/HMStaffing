@@ -22,7 +22,7 @@
         <!-- App Setup -->
         <script src="../lib/app/app.js"></script>
         <script src="main.js"></script>
-        <script src="../employees/employee-list5000.js"></script>
+<!--         // <script src="../employees/employee-list5000.js"></script> -->
 
         <!-- View Code -->
         <script src="views/assets/js/jquery-1.11.2.min.js"></script>
@@ -52,7 +52,6 @@
         <script src="add-employee.js"></script>
 
         <!-- Entities -->
-        <script src="../lib/frameworks/jquery.js"></script>
         <script src="../lib/frameworks/underscore-min.js"></script>
         <script src="../lib/web/xhr.js"></script>
         <script src="../lib/storage/web-storage.js"></script>
@@ -60,6 +59,8 @@
         <script src="entities/user.js"></script>
         <script src="entities/employee.js"></script>
         <script src="entities/employee-storage-adapter.js"></script>
+        <script src="views/assets/js/bootstrap.min.js"></script>
+        <script src="views/assets/js/bootstrap-formhelpers.js"></script>
 
     </head>
     <body id="main"></body>

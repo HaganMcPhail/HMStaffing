@@ -1,27 +1,17 @@
 app.view.listController = {
-    create: function (listView, getEmployees) {
+    create: function (listView, getEmployees, getEmployee, employeeController) {
         var listController = Object.create(app.usecase.usecaseBase.create()),
             employees;
 
-        function deleteEmployeeEventHandler(e) {
-            //console.log(e.id);
-            $.getJSON("http://www.haganmcphail.com/api.php?method=deleteEmployee&id="+e.id+"&jsoncallback=?",
-                function(){
-                $('div#'+e.id).hide();
-            });
-        }
-
-        function getEmployeeEventHandler() {
-            employees = getEmployees.execute(50);
-            displayEmployees(employees);
-            listView.bindDelete();
-            listView.bindGetEmployee();    
+        function getEmployeeEventHandler(e) {
+            var employeeReturned = getEmployee.execute(listView.getViewData().data.employees, e.id);
+            employeeController.execute(employeeReturned);
         }
 
         function initEventHandlers() {
             // listController.initEventHandler('addEmployee', addEmployeeEventHandler);
             // listController.initEventHandler('searchEmployees', searchEmployeesEventHandler);
-            listController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
+            //listController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
             listController.initEventHandler('getEmployee', getEmployeeEventHandler);
         }
 
