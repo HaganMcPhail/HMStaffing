@@ -1,5 +1,5 @@
 app.view.listController = {
-    create: function (listView, getEmployees, deleteEmployee) {
+    create: function (listView, getEmployees, deleteEmployee, employeeController) {
         var listController = Object.create(app.usecase.usecaseBase.create()),
             employees;
 
@@ -28,7 +28,7 @@ app.view.listController = {
                 listView.render();
                 listView.initEventHandlers();
                 initEventHandlers();
-                //employeeController.execute();
+                employeeController.execute();
         }
 
         return listController;

@@ -3,8 +3,8 @@ app.view.employeeController = {
         var employeeController = Object.create(app.usecase.usecaseBase.create());
 
         function getEmployeeEventHandler(e) {
-            // employeeView.getViewData().data.employee = getEmployee.execute(app.employees, e.id);
-            // console.log(employeeView.getViewData().data.employee);
+            employeeView.getViewData().data.employee = getEmployee.execute(app.employees, e.id);
+            console.log(employeeView.getViewData().data.employee);
         }
 
         function initEventHandlers() {

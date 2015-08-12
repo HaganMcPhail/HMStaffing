@@ -13,23 +13,22 @@ app.main.run = function () {
         getEmployees = app.usecase.getEmployees.create(),
         getEmployee = app.usecase.getEmployee.create(),
         // updateEmployee = app.usecase.updateEmployee.create(storage),
-        //employeeController = app.view.employeeController.create(
-            //employeeView,
-            //getEmployee
+        employeeController = app.view.employeeController.create(
+            employeeView,
+            getEmployee
         //  updateEmployee,
         //  deleteEmployee
-        //),
+        ),
         listController = app.view.listController.create(
             listView,
             getEmployees,
             //employeeView,
             // searchEmployees,
-            deleteEmployee
-            //employeeController
-            // employeeController
+            deleteEmployee,
+            employeeController
         );
     
     loginController = app.view.loginController.create(loginView, loginUser, listController, deleteEmployee);
-    //employeeController = app.view.employeeController.create(employeeView, getEmployee);
+    employeeController = app.view.employeeController.create(employeeView, getEmployee);
     loginController.execute();
 };
