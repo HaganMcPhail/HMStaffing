@@ -9,7 +9,7 @@ app.usecase.getEmployee = {
                 employeeReturned = $.grep(employeeList, function(a) {
                     return a.id == id;
                 });
-                console.log(employeeReturned);
+                //console.log(employeeReturned);
                 return employeeReturned;
             }
         };

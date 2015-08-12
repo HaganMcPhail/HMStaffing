@@ -14,7 +14,7 @@ app.usecase.getEmployees = {
                     }
                 }   
 
-                employees = app.employees.slice(0, 100);
+                employees = app.employees.slice(0, limit);
                 
                 return employees;
             }

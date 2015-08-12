@@ -5,9 +5,10 @@ app.main.run = function () {
         webStorageCreator = app.entity.webStorage,
         storage = app.storage.employeeStorageAdapter.create(webStorageCreator),
         loginView = app.view.loginView.create(xhr),
+        headerView = app.view.headerView.create(xhr),
         loginUser = app.usecase.loginUser.create(),
         listView = app.view.listView.create(xhr),
-        // searchEmployees = app.usecase.searchEmployees.create(storage),
+        searchEmployees = app.usecase.searchEmployees.create(),
         deleteEmployee = app.usecase.deleteEmployee.create(),
         employeeView = app.view.employeeView.create(xhr),
         getEmployees = app.usecase.getEmployees.create(),
@@ -23,12 +24,16 @@ app.main.run = function () {
             listView,
             getEmployees,
             //employeeView,
-            // searchEmployees,
+            searchEmployees,
             deleteEmployee,
             employeeController
+        ),
+        headerController = app.view.headerController.create(
+            headerView,
+            listController
         );
     
-    loginController = app.view.loginController.create(loginView, loginUser, listController, deleteEmployee);
+    loginController = app.view.loginController.create(loginView, loginUser, headerController, deleteEmployee);
     employeeController = app.view.employeeController.create(employeeView, getEmployee);
     loginController.execute();
 };

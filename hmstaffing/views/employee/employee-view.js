@@ -29,7 +29,7 @@ app.view.employeeView = {
         }
 
         function getEmployeeEvent(id) {
-            $('#main').trigger({
+            $('body').trigger({
                 type: 'getEmployee',
                 id: id
             });
@@ -46,9 +46,25 @@ app.view.employeeView = {
             $('#myModal').modal('show');        
         }
 
+        function bindEditEmployee(){
+            $('.employee-edit-btn').click(function(){
+                $('.edit-btn-container').hide();
+                $('.save-btn-container').show();
+            });
+        }
+
+        function bindUpdateEmployee(){
+            $('.employee-save-btn').click(function(){
+                $('.save-btn-container').hide();
+                $('.edit-btn-container').show();
+            });
+        }
+
         function init() {
             bindOpenModule();
             bindGetEmployee();
+            bindEditEmployee();
+            bindUpdateEmployee();
         }
 
         employeeView.initEventHandlers = function() {

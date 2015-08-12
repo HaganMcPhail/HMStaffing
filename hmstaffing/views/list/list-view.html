@@ -1,106 +1,46 @@
-<div class="container-fluid">
-    <div class="row">
-        <header id="header" class="header">
-            <img src="views/assets/img/logo.png" class="logo" alt="HM Staffing">
-            <div class="user">
-                <div class="login-user-container">
-                    <span class="login-user">Hagan McPhail</span>
-                </div>
-                <div class="sign-out-container">
-                    <span class="sign-out">Sign Out</span>                            
-                </div>
-            </div>
-        </header>
-    </div><!-- /header -->
-    <!-- <div class="employee-overlay"></div> -->
-    <div class="utility-container">
-        <div id="employee-view">
-            
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-sm-push-7 col-xs-12">
+
+        
+<div class="col-xs-12 employee-list">
+    {{#employees}}
+        <div id="{{id}}" class="row employee-record {{oddEven}}">
+            <div id="{{id}}" class="col-xs-11 employee-popup" data-id="{{id}}">
                 <div class="row">
-                    <div class="col-sm-12 text-left">
-                        <button class="btn btn-default filter-btn" type="button">
-                            <i class="fa fa-filter"></i>
-                        </button>
-                        <button class="btn btn-default add-employee-btn" type="button">
-                            <div class="add-employees-txt">
-                                Add Employees        
-                            </div>
-                            <i class="fa fa-plus-circle"></i>
-                        </button>
+                    <div class="col-xs-9 col-sm-4 col-lg-2">
+                        <div class="label-input hidden-lg">Name:</div>
+                        <div>{{first_name}}  {{last_name}}</div>
+                    </div>
+                    <div class="col-xs-3 visible-xs">
+                        <div class="text-right delete" data-id="{id}}"><i class="fa fa-trash-o"></i></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-2">
+                        <div class="label-input hidden-lg">Title:</div>
+                        <div>{{job_title}}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-2">
+                        <div class="label-input hidden-lg">Email:</div>
+                        <div class="wrap">{{email}}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-2">
+                        <div class="label-input hidden-lg">Phone:</div>
+                        <div>{{phone1}}</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-lg-2">
+                        <div class="label-input hidden-lg">City:</div>
+                        <div class="wrap">{{city}}</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-lg-2">
+                        <div class="label-input hidden-lg">State:</div>
+                        <div class="wrap">{{state}}</div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-7 col-sm-pull-5 col-xs-12">
+            <div class="col-xs-1 hidden-xs">
                 <div class="row">
-                    <div class="input-group search">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search fa-fw"></i></button></span>
+                    <div class="hidden-xs">
+                        <div class="text-center delete" data-id="{{id}}"><i class="fa fa-trash-o"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- /utility-container -->
-    <div class="employee-list-container">
-        <div class="row visible-lg list-header">
-            <div class="col-xs-11 text-left">
-                <div class="row">
-                    <div class="col-lg-2">Name:</div>
-                    <div class="col-lg-2">Title:</div>
-                    <div class="col-lg-2">Email:</div>
-                    <div class="col-lg-2">Phone:</div>
-                    <div class="col-lg-2">City:</div>
-                    <div class="col-lg-2">State:</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 employee-list">
-                {{#employees}}
-                    <div id="{{id}}" class="row employee-record {{oddEven}}">
-                        <div id="{{id}}" class="col-xs-11 employee-popup" data-id="{{id}}">
-                            <div class="row">
-                                <div class="col-xs-9 col-sm-4 col-lg-2">
-                                    <div class="label-input hidden-lg">Name:</div>
-                                    <div>{{first_name}}  {{last_name}}</div>
-                                </div>
-                                <div class="col-xs-3 visible-xs">
-                                    <div class="text-right delete" data-id="{id}}"><i class="fa fa-trash-o"></i></div>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <div class="label-input hidden-lg">Title:</div>
-                                    <div>{{job_title}}</div>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <div class="label-input hidden-lg">Email:</div>
-                                    <div class="wrap">{{email}}</div>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 col-lg-2">
-                                    <div class="label-input hidden-lg">Phone:</div>
-                                    <div>{{phone1}}</div>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 col-lg-2">
-                                    <div class="label-input hidden-lg">City:</div>
-                                    <div class="wrap">{{city}}</div>
-                                </div>
-                                <div class="col-xs-6 col-sm-4 col-lg-2">
-                                    <div class="label-input hidden-lg">State:</div>
-                                    <div class="wrap">{{state}}</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-1 hidden-xs">
-                            <div class="row">
-                                <div class="hidden-xs">
-                                    <div class="text-center delete" data-id="{{id}}"><i class="fa fa-trash-o"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {{/employees}}
-            </div>
-        </div>
-    </div>
+    {{/employees}}
 </div>

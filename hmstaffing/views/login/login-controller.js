@@ -1,5 +1,5 @@
 app.view.loginController = {
-    create: function (loginView, loginUser, listController) {
+    create: function (loginView, loginUser, headerController) {
         var loginController = Object.create(app.usecase.usecaseBase.create());
 
         function loginUserEventHandler(e) {
@@ -10,7 +10,7 @@ app.view.loginController = {
             //     loginView.displayMessage("Username and Password combination was not found");
             //     alert('login failed');
             // }
-            listController.execute();
+            headerController.execute();
         }
 
         function initEventHandlers() {
