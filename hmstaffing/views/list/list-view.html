@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-xs-12 employee-list">
                 {{#employees}}
-                    <div id="{{id}}" class="row employee-record even">
+                    <div id="{{id}}" class="row employee-record {{oddEven}}">
                         <div id="{{id}}" class="col-xs-11 employee-popup" data-id="{{id}}">
                             <div class="row">
                                 <div class="col-xs-9 col-sm-4 col-lg-2">
@@ -67,7 +67,7 @@
                                     <div>{{first_name}}  {{last_name}}</div>
                                 </div>
                                 <div class="col-xs-3 visible-xs">
-                                    <div class="text-right"><i class="fa fa-trash-o"></i></div>
+                                    <div class="text-right delete" data-id="{id}}"><i class="fa fa-trash-o"></i></div>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-lg-2">
                                     <div class="label-input hidden-lg">Title:</div>

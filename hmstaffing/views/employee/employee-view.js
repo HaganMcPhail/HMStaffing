@@ -16,10 +16,9 @@ app.view.employeeView = {
         }
 
         function bindOpenModule() {
-            // $('.employee-popup').click(function () {
-            //     employeeView.getViewData().data.employee = 10;
-            //     openEmployeeModul();
-            // });
+            $('.employee-popup').click(function () {
+                openEmployeeModul();
+            });
         }
 
         function bindDelete() {
@@ -29,13 +28,27 @@ app.view.employeeView = {
             });
         }
 
-        // function openEmployeeModul() {
-        //     $('#myModal').modal('show');        
-        // }
+        function getEmployeeEvent(id) {
+            $('#main').trigger({
+                type: 'getEmployee',
+                id: id
+            });
+        }
+
+        function bindGetEmployee() {
+            $('.employee-popup').click(function () {
+                var id = $(this).attr('id');
+                getEmployeeEvent(id);
+            });
+        }
+
+        function openEmployeeModul() {
+            $('#myModal').modal('show');        
+        }
 
         function init() {
             bindOpenModule();
-            //openEmployeeModul();
+            bindGetEmployee();
         }
 
         employeeView.initEventHandlers = function() {

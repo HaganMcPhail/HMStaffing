@@ -10,8 +10,10 @@ app.view.listController = {
 
         function deleteEmployeeEventHandler(e) {
             //alert('yes');
-            deleteEmployee.execute(e.id);
-            listController.execute();
+            console.log(deleteEmployee.execute(e.id));
+            listView.getViewData().data.employees = getEmployees.execute(50);
+            listView.render();
+            listView.initEventHandlers();
         }
 
         function initEventHandlers() {
@@ -26,6 +28,7 @@ app.view.listController = {
                 listView.render();
                 listView.initEventHandlers();
                 initEventHandlers();
+                //employeeController.execute();
         }
 
         return listController;

@@ -15,22 +15,8 @@ app.view.listView = {
             });
         }
 
-        function getEmployeeEvent(id) {
-            $('#main').trigger({
-                type: 'getEmployee',
-                id: id
-            });
-        }
-
-        function bindGetEmployee() {
-            $('.employee-popup').click(function () {
-                var id = $(this).attr('id');
-                getEmployeeEvent(id);
-            });
-        }
-
         function bindDelete() {
-            $('.employee-popup').click(function () {
+            $('.delete').click(function () {
                 var id = $(this).attr('data-id');
                 deleteEmployeeEvent(id);
             });
@@ -43,7 +29,7 @@ app.view.listView = {
 
         function init() {
             bindDelete();
-            bindGetEmployee();
+            //bindGetEmployee();
             removeBackgroundImage();
         }
 
