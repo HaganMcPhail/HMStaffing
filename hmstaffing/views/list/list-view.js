@@ -47,7 +47,6 @@ app.view.listView = {
             $('html, body').css('background-color','#DDDDDD');
         }
 
-
         function init() {
             bindDelete();
             bindGetEmployee();
