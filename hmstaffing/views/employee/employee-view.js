@@ -7,7 +7,6 @@ app.view.employeeView = {
                 data: { employee: [] }
             },
             employeeView = Object.create(app.view.htmlView.create(xhr, viewData));
-            console.log(viewData);
 
         function deleteEmployeeEvent(id) {
             $('#main').trigger({
@@ -16,18 +15,11 @@ app.view.employeeView = {
             });
         }
 
-        function getEmployeeEvent(id) {
-            $('#main').trigger({
-                type: 'getEmployee',
-                id: id
-            });
-        }
-
-        function bindGetEmployee() {
-            $('.employee-record').click(function () {
-                var id = $(this).attr('id');
-                getEmployeeEvent(id);
-            });
+        function bindOpenModule() {
+            // $('.employee-popup').click(function () {
+            //     employeeView.getViewData().data.employee = 10;
+            //     openEmployeeModul();
+            // });
         }
 
         function bindDelete() {
@@ -37,9 +29,13 @@ app.view.employeeView = {
             });
         }
 
+        // function openEmployeeModul() {
+        //     $('#myModal').modal('show');        
+        // }
+
         function init() {
-            bindDelete();
-            bindGetEmployee();
+            bindOpenModule();
+            //openEmployeeModul();
         }
 
         employeeView.initEventHandlers = function() {

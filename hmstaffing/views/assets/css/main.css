@@ -19,7 +19,7 @@ html, body{
 }
 .popup-container{
     position: fixed;
-    top:60px;
+    top:130px;
     left:0;
     border-radius: 15px;
     background-color: #DDDDDD;

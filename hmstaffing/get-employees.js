@@ -6,15 +6,9 @@ app.usecase.getEmployees = {
             execute: function (limit) {
                 var employees;
 
-                // $.ajax({
-                //       dataType: "jsonp",
-                //       async: false,
-                //       url: "http://www.haganmcphail.com/api.php?method=getAllEmployees&end="+limit+"&jsoncallback=?",
-                //       success: function(data){
-                //         employees = data;
-                //       }
-                //     });
-                return app.employees;
+                employees = app.employees.slice(0,100);
+                
+                return employees;
             }
         };
 

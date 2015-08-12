@@ -17,8 +17,6 @@ app.view.employeeController = {
 
                 employeeView.getViewData().data.employee = employeeReturned;
                 employeeView.render();
-                // jQuery.noConflict();
-                // $('#myModal').modal('show');
                 employeeView.initEventHandlers();
                 initEventHandlers();
         }

@@ -23,14 +23,14 @@ app.view.listView = {
         }
 
         function bindGetEmployee() {
-            $('.employee-record').click(function () {
+            $('.employee-popup').click(function () {
                 var id = $(this).attr('id');
                 getEmployeeEvent(id);
             });
         }
 
         function bindDelete() {
-            $('.delete').click(function () {
+            $('.employee-popup').click(function () {
                 var id = $(this).attr('data-id');
                 deleteEmployeeEvent(id);
             });
