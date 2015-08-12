@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Stylesheets -->
+        <link href="views/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="views/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="views/assets/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+        <link href="views/list/list-view.css" rel="stylesheet">
+        <link href="views/employee/employee-view.css" rel="stylesheet">
+        <link href="views/assets/css/main.css" rel="stylesheet">
+        <link href="views/login/login-view.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <!-- App Setup -->
+        <script src="../lib/app/app.js"></script>
+        <script src="main.js"></script>
+        <script src="../employees/employee-list5000.js"></script>
+
+        <!-- View Code -->
+        <script src="views/assets/js/jquery-1.11.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="../lib/view/mustache.js"></script>
+        <script src="../lib/view/i-view.js"></script>
+        <script src="../lib/view/i-view-data.js"></script>
+        <script src="../lib/view/html-view.js"></script>
+        <script src="views/assets/js/bootstrap.min.js"></script>
+        <script src="views/assets/js/bootstrap-formhelpers.js"></script>
+        <script src="views/login/login-view.js"></script>
+        <script src="views/login/login-controller.js"></script>
+        <script src="views/list/list-view.js"></script>
+        <script src="views/list/list-controller.js"></script>
+        <script src="views/employee/employee-view.js"></script>
+        <script src="views/employee/employee-controller.js"></script>
+
+        <!-- Use Cases -->
+        <script src="../lib/usecase/i-use-case.js"></script>
+        <script src="../lib/usecase/usecase-base.js"></script>
+        <script src="login-user.js"></script>
+        <script src="get-employees.js"></script>
+        <script src="search-employees.js"></script>
+        <script src="get-employee.js"></script>
+        <script src="delete-employee.js"></script>
+        <script src="update-employee.js"></script>
+        <script src="add-employee.js"></script>
+
+        <!-- Entities -->
+        <script src="../lib/frameworks/jquery.js"></script>
+        <script src="../lib/frameworks/underscore-min.js"></script>
+        <script src="../lib/web/xhr.js"></script>
+        <script src="../lib/storage/web-storage.js"></script>
+        <script src="../lib/collection/list.js"></script>
+        <script src="entities/user.js"></script>
+        <script src="entities/employee.js"></script>
+        <script src="entities/employee-storage-adapter.js"></script>
+
+    </head>
+    <body id="main"></body>
+    
+    <!-- script references -->
+    <script type="text/javascript">app.run();</script>
+</html>
