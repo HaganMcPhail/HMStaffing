@@ -29,12 +29,31 @@ app.view.listView = {
             });
         }
 
+        function bindAddEmployee() {
+            $('.add-employee-btn').click(function(){
+                addEmployeeEvent();
+            });
+        }
+
+        function addEmployeeEvent() {
+            $('#main').trigger({
+                type: 'addEmployee'
+            });
+        }
+
         function bindSearchEmployees() {
             $('.search button').click(function () {
                 var search = $('.search input').val();
                 console.log(search);
                 if (search != ''){
+                    $(this).prop('disabled', true);
                     searchEmployeesEvent(search);
+
+                }
+            });
+            $(".search input").keyup(function(event){
+                if(event.keyCode == 13){
+                    $(".search button").click();
                 }
             });
             // $(".search input").keyup(function () {
@@ -52,8 +71,10 @@ app.view.listView = {
         }
 
         function init() {
+            $('.search button').prop('disabled', false);
             bindDeleteEmployee();
             bindSearchEmployees();
+            bindAddEmployee();
             removeBackgroundImage();
         }
 

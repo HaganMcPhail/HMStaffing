@@ -9,6 +9,7 @@ app.main.run = function () {
         loginUser = app.usecase.loginUser.create(),
         listView = app.view.listView.create(xhr),
         searchEmployees = app.usecase.searchEmployees.create(),
+        addEmployee = app.usecase.addEmployee.create(),
         deleteEmployee = app.usecase.deleteEmployee.create(),
         employeeView = app.view.employeeView.create(xhr),
         getEmployees = app.usecase.getEmployees.create(),
@@ -26,7 +27,8 @@ app.main.run = function () {
             //employeeView,
             searchEmployees,
             deleteEmployee,
-            employeeController
+            employeeController,
+            addEmployee
         ),
         headerController = app.view.headerController.create(
             headerView,

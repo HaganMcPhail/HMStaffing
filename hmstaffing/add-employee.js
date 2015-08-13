@@ -21,7 +21,7 @@ app.usecase.addEmployee = {
             }
         };
 
-        return deleteEmployee;
+        return addEmployee;
 
     }
 };
