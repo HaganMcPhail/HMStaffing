@@ -16,7 +16,7 @@ app.view.employeeView = {
         }
 
         function bindAddEmployee() {
-            $('.add-employee-btn').click(function(){
+            $('.add-employee-btn').off().on('click', function(){
                 employeeView.openAddEmployeeModule();
             });
         }
@@ -52,7 +52,7 @@ app.view.employeeView = {
         }
 
         function bindDelete() {
-            $('.delete').click(function () {
+            $('.delete').off().on('click', function () {
                 var id = $(this).attr('data-id');
                 deleteEmployeeEvent(id);
             });
@@ -63,7 +63,7 @@ app.view.employeeView = {
         }
 
         function bindEditEmployee(){
-            $('.employee-edit-btn').click(function(){
+            $('.employee-edit-btn').off().on('click', function(){
                 $('.edit-btn-container').hide();
                 $('.save-btn-container').show();
                 $('.name-hide').show();
@@ -72,7 +72,7 @@ app.view.employeeView = {
         }
 
         function bindAddEmployee(){
-            $('#addEmployee .employee-save-btn').click(function(){
+            $('#addEmployee .employee-save-btn').off().on('click', function(){
                 $('#addEmployee .save-btn-container').hide();
                 $('#addEmployee .edit-btn-container').show();
                 $('#addEmployee .name-hide').hide();
@@ -92,7 +92,7 @@ app.view.employeeView = {
         }
 
         function bindUpdateEmployee(){
-            $('#myModal .employee-save-btn').click(function(){
+            $('#myModal .employee-save-btn').off().on('click', function(){
                 $('#myModal .save-btn-container').hide();
                 $('#myModal .edit-btn-container').show();
                 $('#myModal .name-hide').hide();
@@ -122,9 +122,6 @@ app.view.employeeView = {
             }
         }
 
-        employeeView.openEmployeeModule = function() {
-            $('#myModule').modal('show');
-        }
 
         employeeView.openAddEmployeeModule = function() {
             $('#addEmployee').modal('show');

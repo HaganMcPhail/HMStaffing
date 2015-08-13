@@ -33,3 +33,9 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.fa-info-circle{
+    margin-top: 20px;
+    font-size: 30px;
+    color:#0099CC;
+    cursor: pointer;
+}

@@ -28,7 +28,7 @@ app.usecase.updateEmployee = {
                 employeeUpdated.phone2 = phone2;
                 employeeUpdated.search = firstName + ' ' + lastName + ' ' + title + ' ' + email + ' ' + city + ' ' + state;
 
-                app.employees.push(employeeUpdated);
+                app.employees.unshift(employeeUpdated);
                 
                 localStorage.setItem("employees", JSON.stringify(app.employees));
                 console.log(app.employees);

@@ -193,11 +193,11 @@ $(document).ready(function(){
             return e.id == id; 
         });
         initialDisplay(result[0]);
-        $('#myModal').modal('show');
+        $('#employeeViewModal').modal('show');
     });
 
     $('button.close').click(function(){
-        $('#myModal').modal('hide'); 
+        $('#employeeViewModal').modal('hide'); 
     });  
 });
 

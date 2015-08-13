@@ -17,7 +17,7 @@ app.usecase.addEmployee = {
                 employeeAdded.phone2 = phone2;
                 employeeAdded.search = firstName + ' ' + lastName + ' ' + title + ' ' + email + ' ' + city + ' ' + state;
 
-                app.employees.push(employeeAdded);
+                app.employees.unshift(employeeAdded);
                 
                 app.idIndex = id + 1;
                 localStorage.setItem("idIndex", app.idIndex);

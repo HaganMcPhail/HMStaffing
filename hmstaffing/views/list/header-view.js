@@ -8,6 +8,16 @@ app.view.headerView = {
             },
             headerView = Object.create(app.view.htmlView.create(xhr, viewData));
 
+            function bindReloadPage(){
+                $('.logo, .sign-out').click(function(){
+                    location.reload();
+                });
+            }
+
+            headerView.init = function() {
+                bindReloadPage();
+            }
+
         return headerView;
     }
 };

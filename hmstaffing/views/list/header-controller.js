@@ -4,6 +4,7 @@ app.view.headerController = {
 
         headerController.execute = function () {
                 headerView.render();
+                headerView.init();
                 listController.execute();
         }
 

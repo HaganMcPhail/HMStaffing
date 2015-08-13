@@ -18,6 +18,7 @@ header.header{
     height:80px;
     margin-top:10px;
     margin-left:25px;
+    cursor: pointer;
 }
 .user{
     float:right;
@@ -28,6 +29,7 @@ header.header{
     height:50px;
     display: block;
     text-align: right;
+    cursor: pointer;
 } 
 .login-user-container,.login-user{
     font-size:25px;
@@ -89,7 +91,9 @@ header.header{
     margin-right:-40px;
     padding:5px 25px;
     padding-bottom: 8px;
-    cursor:pointer;
+}
+.employee-popup{
+    cursor: pointer;
 }
 .employee-record > div > .row > div{
     margin-top:15px;
@@ -98,6 +102,7 @@ header.header{
     font-size:25px;
     color:#0099CC;
     cursor:pointer;
+    z-index: 1000;
 }
 .employee-record .fa-trash-o:hover{
     color:#333333;
@@ -109,11 +114,6 @@ header.header{
 .even{
     background-color:#f5f5f5;
 }
-/*.odd:hover, .even:hover{
-    background-color:#0099CC;
-    color:#f5f5f5;
-
-}*/
 .wrap{
     word-wrap: break-word;
 }
@@ -123,6 +123,7 @@ header.header{
     color: #0099CC;
     font-size:18px;
 }
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 

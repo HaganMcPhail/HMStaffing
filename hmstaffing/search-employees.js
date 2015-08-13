@@ -7,7 +7,7 @@ app.usecase.searchEmployees = {
                 app.results = [];
                 app.searchID = searchID;
 
-                for(var i=0;i<app.employees.length;i++){
+                for(var i=0;i<100;i++){
                     if (app.employees[i].search.toLowerCase().indexOf(searchID.toLowerCase()) != -1) {
                         app.results.push(app.employees[i]);
                     }
