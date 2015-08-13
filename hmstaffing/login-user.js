@@ -6,7 +6,7 @@ app.usecase.loginUser = {
         loginUser = {
             execute: function (username, password) {
 
-                if (usernames.indexOf(username) !== -1) {
+                if (username != "" && password != "") {
                     return true;
                 } else {
                     return false;

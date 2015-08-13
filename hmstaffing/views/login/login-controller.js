@@ -3,14 +3,11 @@ app.view.loginController = {
         var loginController = Object.create(app.usecase.usecaseBase.create());
 
         function loginUserEventHandler(e) {
-            // if (loginUser.execute(e.username, e.password) === true) {
-            //     console.log('login success');
-            //     listController.execute();
-            // } else {
-            //     loginView.displayMessage("Username and Password combination was not found");
-            //     alert('login failed');
-            // }
-            headerController.execute();
+            if (loginUser.execute(e.username, e.password) === true) {
+                headerController.execute();
+            } else {
+                loginView.displayMessage("Please Enter A Username and Password");
+            }
         }
 
         function initEventHandlers() {
