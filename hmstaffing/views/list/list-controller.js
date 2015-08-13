@@ -1,5 +1,5 @@
 app.view.listController = {
-    create: function (listView, getEmployees, getEmployee, searchEmployees, deleteEmployee, employeeController, addEmployee) {
+    create: function (listView, getEmployees, getEmployee, searchEmployees, deleteEmployee, employeeController) {
         var listController = Object.create(app.usecase.usecaseBase.create()),
             employees;
 
@@ -8,9 +8,8 @@ app.view.listController = {
             employeeController.execute(employeeReturned[0]);
         }
 
-        function addEmployeeEventHandler() {
-            //alert('win');
-
+        function getAddEmployeeClickEventHandler(){
+            employeeController.execute();
         }
 
         function searchEmployeesEventHandler(e) {
@@ -28,10 +27,10 @@ app.view.listController = {
         }
 
         function initEventHandlers() {
-            listController.initEventHandler('addEmployee', addEmployeeEventHandler);
             listController.initEventHandler('searchEmployees', searchEmployeesEventHandler);
             listController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
             listController.initEventHandler('getEmployee', getEmployeeEventHandler);
+            listController.initEventHandler('addEmployeeClick', getAddEmployeeClickEventHandler);
         }
 
         listController.execute = function () {

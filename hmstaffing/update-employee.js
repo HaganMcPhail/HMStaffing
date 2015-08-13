@@ -3,7 +3,7 @@ app.usecase.updateEmployee = {
         var updateEmployee;
         
         updateEmployee = {
-            execute: function (employeeList, id, firstName, lastName, title, email, city, state, phone1, phone2) {
+            execute: function (id, firstName, lastName, title, email, city, state, phone1, phone2) {
                 var employeeUpdated,
                     deletedEmployee;
  
@@ -29,10 +29,9 @@ app.usecase.updateEmployee = {
                 employeeUpdated.search = firstName + ' ' + lastName + ' ' + title + ' ' + email + ' ' + city + ' ' + state;
 
                 app.employees.push(employeeUpdated);
-                console.log(employeeUpdated);
-                console.log(app.employees)
                 
                 localStorage.setItem("employees", JSON.stringify(app.employees));
+                console.log(app.employees);
 
                 return employeeUpdated;
             }

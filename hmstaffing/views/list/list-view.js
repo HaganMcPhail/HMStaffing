@@ -29,8 +29,19 @@ app.view.listView = {
             });
         }
 
-        function bindDeleteEmployee() {
+        function bindAddEmployeeClick() {
+            $('.add-employee-btn').click(function () {
+                addEmployeeClick();
+            });
+        }
 
+        function addEmployeeClick(){
+            $('#main').trigger({
+                type: 'addEmployeeClick'
+            });
+        }
+
+        function bindDeleteEmployee() {
             $('.delete').click(function () {
                 var id = $(this).attr('data-id');
                 deleteEmployeeEvent(id);
@@ -41,18 +52,6 @@ app.view.listView = {
             $('#main').trigger({
                 type: 'searchEmployees',
                 search : search
-            });
-        }
-
-        function bindAddEmployee() {
-            $('.add-employee-btn').click(function(){
-                addEmployeeEvent();
-            });
-        }
-
-        function addEmployeeEvent() {
-            $('#main').trigger({
-                type: 'addEmployee'
             });
         }
 
@@ -87,8 +86,8 @@ app.view.listView = {
             $('.search button').prop('disabled', false);
             bindDeleteEmployee();
             bindSearchEmployees();
+            bindAddEmployeeClick();
             bindGetEmployee();
-            bindAddEmployee();
             removeBackgroundImage();
         }
 

@@ -3,21 +3,28 @@ app.usecase.addEmployee = {
         var addEmployee;
         
         addEmployee = {
-            execute: function (searchID) {
-                var addedEmployee;
- 
-                for(var i=0;i<app.employees.length;i++){
-                    if (app.employees[i].id == searchID) {
-                        var splice = i;
-                        deletedEmployee = app.employees[i];
-                        break;
-                    }
-                }    
+            execute: function (id, firstName, lastName, title, email, city, state, phone1, phone2) {
+                var employeeAdded = {};
 
-                app.employees.splice(splice, 1);
+                employeeAdded.id = id;
+                employeeAdded.first_name = firstName;
+                employeeAdded.last_name = lastName;
+                employeeAdded.job_title = title;
+                employeeAdded.email = email;
+                employeeAdded.city = city;
+                employeeAdded.state = state;
+                employeeAdded.phone1 = phone1;
+                employeeAdded.phone2 = phone2;
+                employeeAdded.search = firstName + ' ' + lastName + ' ' + title + ' ' + email + ' ' + city + ' ' + state;
+
+                app.employees.push(employeeAdded);
+                
+                app.idIndex = id + 1;
+                localStorage.setItem("idIndex", app.idIndex);
                 localStorage.setItem("employees", JSON.stringify(app.employees));
+                console.log(app.employees);
 
-                return deletedEmployee;
+                return employeeAdded;
             }
         };
 

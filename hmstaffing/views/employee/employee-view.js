@@ -15,9 +15,15 @@ app.view.employeeView = {
             });
         }
 
-        function updateEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2) {
+        function bindAddEmployee() {
+            $('.add-employee-btn').click(function(){
+                employeeView.openAddEmployeeModule();
+            });
+        }
+
+        function addEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2) {
             $('#main').trigger({
-                type: 'updateEmployee',
+                type: 'addEmployee',
                 id : id,
                 firstName: firstName,
                 lastName: lastName,
@@ -30,9 +36,18 @@ app.view.employeeView = {
             });
         }
 
-        function bindOpenModule() {
-            $('.employee-popup').click(function () {
-                openEmployeeModule();
+        function updateEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2) {
+            $('#main').trigger({
+                type: 'updateEmployee',
+                id : id,
+                firstName: firstName,
+                lastName: lastName,
+                title: title,
+                email: email,
+                city: city,
+                state: state,
+                phone1: phone1,
+                phone2: phone2
             });
         }
 
@@ -56,40 +71,67 @@ app.view.employeeView = {
             });
         }
 
-        function bindUpdateEmployee(){
-            $('.employee-save-btn').click(function(){
-                $('.save-btn-container').hide();
-                $('.edit-btn-container').show();
-                $('.name-hide').hide();
-                var id = $(this).attr('data-id'),
-                    firstName = $('#firstName').val(),
-                    lastName = $('#lastName').val(),
-                    title = $('#title').val(),
-                    email = $('#email').val(),
-                    city = $('#city').val(),
-                    state = $('#state').val(),
-                    phone1 = $('#phone1').val(),
-                    phone2 = $('#phone2').val()
-                $('h2.employee-name').text(firstName + ' ' + lastName);
-                updateEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2);
-                $('.form-employee input').prop('disabled', true);
+        function bindAddEmployee(){
+            $('#addEmployee .employee-save-btn').click(function(){
+                $('#addEmployee .save-btn-container').hide();
+                $('#addEmployee .edit-btn-container').show();
+                $('#addEmployee .name-hide').hide();
+                var id = app.idIndex,
+                    firstName = $('#addEmployee #firstName').val(),
+                    lastName = $('#addEmployee #lastName').val(),
+                    title = $('#addEmployee #title').val(),
+                    email = $('#addEmployee #email').val(),
+                    city = $('#addEmployee #city').val(),
+                    state = $('#addEmployee #state').val(),
+                    phone1 = $('#addEmployee #phone1').val(),
+                    phone2 = $('#addEmployee #phone2').val()
+                $('#addEmployee h2.employee-name').text(firstName + ' ' + lastName);
+                addEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2);
+                $('#addEmployee .form-employee input').prop('disabled', true);
             });
         }
 
-        function init() {
-            
+        function bindUpdateEmployee(){
+            $('#myModal .employee-save-btn').click(function(){
+                $('#myModal .save-btn-container').hide();
+                $('#myModal .edit-btn-container').show();
+                $('#myModal .name-hide').hide();
+                var id = $(this).attr('data-id'),
+                    firstName = $('#myModal #firstName').val(),
+                    lastName = $('#myModal #lastName').val(),
+                    title = $('#myModal #title').val(),
+                    email = $('#myModal #email').val(),
+                    city = $('#myModal #city').val(),
+                    state = $('#myModal #state').val(),
+                    phone1 = $('#myModal #phone1').val(),
+                    phone2 = $('#myModal #phone2').val()
+                $('#myModal h2.employee-name').text(firstName + ' ' + lastName);
+                updateEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2);
+                $('#myModal .form-employee input').prop('disabled', true);
+            });
+        }
+
+        function init(employee) {
             bindEditEmployee();
             bindUpdateEmployee();
-            openEmployeeModule();
-            
+            bindAddEmployee();
+            if (typeof employee != 'undefined'){
+                openEmployeeModule();
+            } else {
+                employeeView.openAddEmployeeModule();
+            }
         }
 
-        employeeView.getEmployeeUpdates = function(employee){
-
+        employeeView.openEmployeeModule = function() {
+            $('#myModule').modal('show');
         }
 
-        employeeView.initEventHandlers = function() {
-            init();
+        employeeView.openAddEmployeeModule = function() {
+            $('#addEmployee').modal('show');
+        }
+
+        employeeView.initEventHandlers = function(employee) {
+            init(employee);
         };
 
         return employeeView;
