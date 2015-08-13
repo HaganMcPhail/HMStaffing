@@ -5,11 +5,11 @@ app.view.listController = {
 
         function getEmployeeEventHandler(e) {
             var employeeReturned = getEmployee.execute(listView.getViewData().data.employees, e.id);
-            employeeController.execute(employeeReturned[0]);
+            employeeController.renderView(employeeReturned[0]);
         }
 
         function getAddEmployeeClickEventHandler(){
-            employeeController.execute();
+            employeeController.renderView();   
         }
 
         function searchEmployeesEventHandler(e) {
@@ -34,6 +34,7 @@ app.view.listController = {
         }
 
         listController.execute = function () {
+                employeeController.execute();
                 listView.getViewData().data.employees = getEmployees.execute(75);
                 listView.render();
                 listView.initEventHandlers();

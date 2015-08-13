@@ -22,7 +22,6 @@ app.usecase.addEmployee = {
                 app.idIndex = id + 1;
                 localStorage.setItem("idIndex", app.idIndex);
                 localStorage.setItem("employees", JSON.stringify(app.employees));
-                console.log(app.employees);
 
                 return employeeAdded;
             }

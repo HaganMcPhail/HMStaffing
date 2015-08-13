@@ -20,12 +20,15 @@ app.view.employeeController = {
             //employeeController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
         }
 
-        employeeController.execute = function (employee) {
+        employeeController.renderView = function (employee) {
                 if (employee) {
                     employeeView.getViewData().data.employee = employee;
                 }
                 employeeView.render();
                 employeeView.initEventHandlers(employee);
+        }
+
+        employeeController.execute = function () {
                 initEventHandlers();
         }
 

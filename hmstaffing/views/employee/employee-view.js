@@ -15,7 +15,7 @@ app.view.employeeView = {
             });
         }
 
-        function bindAddEmployee() {
+        function bindOpenModal() {
             $('.add-employee-btn').off().on('click', function(){
                 employeeView.openAddEmployeeModule();
             });
@@ -72,6 +72,7 @@ app.view.employeeView = {
         }
 
         function bindAddEmployee(){
+            console.log('*** bindAddEmployee ***');
             $('#addEmployee .employee-save-btn').off().on('click', function(){
                 $('#addEmployee .save-btn-container').hide();
                 $('#addEmployee .edit-btn-container').show();
@@ -115,6 +116,7 @@ app.view.employeeView = {
             bindEditEmployee();
             bindUpdateEmployee();
             bindAddEmployee();
+            bindOpenModal();
             if (typeof employee != 'undefined'){
                 openEmployeeModule();
             } else {
@@ -126,6 +128,7 @@ app.view.employeeView = {
         employeeView.openAddEmployeeModule = function() {
             $('#addEmployee .name-hide').show();
             $('#addEmployee .form-employee input').prop('disabled', false);
+            $('#addEmployee .save-btn-container').show();
             $('#addEmployee').modal('show');
         }
 
