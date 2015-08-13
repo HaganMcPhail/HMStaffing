@@ -15,7 +15,22 @@ app.view.listView = {
             });
         }
 
+        function getEmployeeEvent(id) {
+            $('body').trigger({
+                type: 'getEmployee',
+                id: id
+            });
+        }
+
+        function bindGetEmployee() {
+            $('.employee-popup').click(function () {
+                var id = $(this).attr('id');
+                getEmployeeEvent(id);
+            });
+        }
+
         function bindDeleteEmployee() {
+
             $('.delete').click(function () {
                 var id = $(this).attr('data-id');
                 deleteEmployeeEvent(id);
@@ -44,7 +59,6 @@ app.view.listView = {
         function bindSearchEmployees() {
             $('.search button').click(function () {
                 var search = $('.search input').val();
-                console.log(search);
                 if (search != ''){
                     $(this).prop('disabled', true);
                     searchEmployeesEvent(search);
@@ -53,7 +67,12 @@ app.view.listView = {
             });
             $(".search input").keyup(function(event){
                 if(event.keyCode == 13){
-                    $(".search button").click();
+                    var search = $('.search input').val();
+                    if (search != ''){
+                        $('.search button').prop('disabled', true);
+                        searchEmployeesEvent(search);
+
+                    }
                 }
             });
             // $(".search input").keyup(function () {
@@ -71,9 +90,11 @@ app.view.listView = {
         }
 
         function init() {
+
             $('.search button').prop('disabled', false);
             bindDeleteEmployee();
             bindSearchEmployees();
+            bindGetEmployee();
             bindAddEmployee();
             removeBackgroundImage();
         }

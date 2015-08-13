@@ -10,6 +10,7 @@ app.usecase.getEmployee = {
                     return a.id == id;
                 });
                 //console.log(employeeReturned);
+
                 return employeeReturned;
             }
         };

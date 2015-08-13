@@ -16,15 +16,14 @@ app.main.run = function () {
         getEmployee = app.usecase.getEmployee.create(),
         // updateEmployee = app.usecase.updateEmployee.create(storage),
         employeeController = app.view.employeeController.create(
-            employeeView,
-            getEmployee
+            employeeView
         //  updateEmployee,
         //  deleteEmployee
         ),
         listController = app.view.listController.create(
             listView,
             getEmployees,
-            //employeeView,
+            getEmployee,
             searchEmployees,
             deleteEmployee,
             employeeController,

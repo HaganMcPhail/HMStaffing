@@ -1,35 +1,30 @@
 app.view.listController = {
-    create: function (listView, getEmployees, searchEmployees, deleteEmployee, employeeController, addEmployee) {
+    create: function (listView, getEmployees, getEmployee, searchEmployees, deleteEmployee, employeeController, addEmployee) {
         var listController = Object.create(app.usecase.usecaseBase.create()),
             employees;
 
         function getEmployeeEventHandler(e) {
             var employeeReturned = getEmployee.execute(listView.getViewData().data.employees, e.id);
-            //employeeController.execute(employeeReturned);
+            employeeController.execute(employeeReturned[0]);
         }
 
         function addEmployeeEventHandler() {
-            alert('win');
+            //alert('win');
             //var employeeReturned = getEmployee.execute(listView.getViewData().data.employees, e.id);
             //employeeController.execute(employeeReturned);
+
         }
 
         function searchEmployeesEventHandler(e) {
             listView.getViewData().data.employees = searchEmployees.execute(e.search);
-            listView.render(app.results);
+            listView.render();
             listView.initEventHandlers();
         }
 
         function deleteEmployeeEventHandler(e) {
-            //alert('yes');
             deleteEmployee.execute(e.id);
-            if (typeof app.results !== 'undefined'){
-                listView.getViewData().data.employees = app.results;
-                listView.render(app.results);
-            } else {
-                listView.getViewData().data.employees = getEmployees.execute(75);
-                listView.render();
-            }
+            listView.getViewData().data.employees = getEmployees.execute(75);
+            listView.render();
             listView.initEventHandlers();
         }
 
@@ -37,7 +32,7 @@ app.view.listController = {
             listController.initEventHandler('addEmployee', addEmployeeEventHandler);
             listController.initEventHandler('searchEmployees', searchEmployeesEventHandler);
             listController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
-            //listController.initEventHandler('getEmployee', getEmployeeEventHandler);
+            listController.initEventHandler('getEmployee', getEmployeeEventHandler);
         }
 
         listController.execute = function () {
@@ -45,7 +40,6 @@ app.view.listController = {
                 listView.render();
                 listView.initEventHandlers();
                 initEventHandlers();
-                employeeController.execute();
         }
 
         return listController;

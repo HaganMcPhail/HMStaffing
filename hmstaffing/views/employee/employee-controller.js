@@ -1,24 +1,23 @@
 app.view.employeeController = {
-    create: function (employeeView, getEmployee) {
+    create: function (employeeView) {
         var employeeController = Object.create(app.usecase.usecaseBase.create());
 
-        function getEmployeeEventHandler(e) {
-            employeeView.getViewData().data.employee = getEmployee.execute(app.employees, e.id);
-            console.log(employeeView.getViewData().data.employee);
-        }
 
         function initEventHandlers() {
             // employeeController.initEventHandler('addEmployee', addEmployeeEventHandler);
             // employeeController.initEventHandler('searchEmployees', searchEmployeesEventHandler);
             //employeeController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
-            employeeController.initEventHandler('getEmployee', getEmployeeEventHandler);
+            //employeeController.initEventHandler('getEmployee', getEmployeeEventHandler);
         }
 
-        employeeController.execute = function () {
-                //employeeView.getViewData().data.employee = employeeReturned;
+        employeeController.execute = function (employee) {
+                console.log(employee);
+                if (employee) {
+                employeeView.getViewData().data.employee = employee;
+            }
                 employeeView.render();
                 employeeView.initEventHandlers();
-                initEventHandlers();
+                //initEventHandlers();
         }
 
         return employeeController;

@@ -4,7 +4,7 @@ app.view.employeeView = {
         var viewData = iViewData || {
                 container_id: 'employee-view',
                 template: { url: 'views/employee/employee-view.html'},
-                data: { employee: [] }
+                data: { employee: null }
             },
             employeeView = Object.create(app.view.htmlView.create(xhr, viewData));
 
@@ -17,7 +17,7 @@ app.view.employeeView = {
 
         function bindOpenModule() {
             $('.employee-popup').click(function () {
-                openEmployeeModul();
+                openEmployeeModule();
             });
         }
 
@@ -28,21 +28,21 @@ app.view.employeeView = {
             });
         }
 
-        function getEmployeeEvent(id) {
-            $('body').trigger({
-                type: 'getEmployee',
-                id: id
-            });
-        }
+        // function getEmployeeEvent(id) {
+        //     $('body').trigger({
+        //         type: 'getEmployee',
+        //         id: id
+        //     });
+        // }
 
-        function bindGetEmployee() {
-            $('.employee-popup').click(function () {
-                var id = $(this).attr('id');
-                getEmployeeEvent(id);
-            });
-        }
+        // function bindGetEmployee() {
+        //     $('.employee-popup').click(function () {
+        //         var id = $(this).attr('id');
+        //         getEmployeeEvent(id);
+        //     });
+        // }
 
-        function openEmployeeModul() {
+        function openEmployeeModule() {
             $('#myModal').modal('show');        
         }
 
@@ -50,6 +50,7 @@ app.view.employeeView = {
             $('.employee-edit-btn').click(function(){
                 $('.edit-btn-container').hide();
                 $('.save-btn-container').show();
+                $('.form-employee input').prop('disabled', false);
             });
         }
 
@@ -57,14 +58,16 @@ app.view.employeeView = {
             $('.employee-save-btn').click(function(){
                 $('.save-btn-container').hide();
                 $('.edit-btn-container').show();
+                $('.form-employee input').prop('disabled', true);
             });
         }
 
         function init() {
-            bindOpenModule();
-            bindGetEmployee();
+            
             bindEditEmployee();
             bindUpdateEmployee();
+            openEmployeeModule();
+            
         }
 
         employeeView.initEventHandlers = function() {

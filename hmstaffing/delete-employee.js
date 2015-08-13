@@ -16,7 +16,7 @@ app.usecase.deleteEmployee = {
 
                 app.employees.splice(splice, 1);
                 localStorage.setItem("employees", JSON.stringify(app.employees));
-                console.log(app.employees.length);
+
                 return deletedEmployee;
             }
         };
