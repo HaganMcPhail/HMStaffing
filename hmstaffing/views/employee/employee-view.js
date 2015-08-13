@@ -87,7 +87,7 @@ app.view.employeeView = {
                     phone2 = $('#addEmployee #phone2').val()
                 $('#addEmployee h2.employee-name').text(firstName + ' ' + lastName);
                 addEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2);
-                $('#addEmployee .form-employee input').prop('disabled', true);
+                $('#addEmployee').modal('hide');
             });
         }
 
@@ -124,6 +124,8 @@ app.view.employeeView = {
 
 
         employeeView.openAddEmployeeModule = function() {
+            $('#addEmployee .name-hide').show();
+            $('#addEmployee .form-employee input').prop('disabled', false);
             $('#addEmployee').modal('show');
         }
 

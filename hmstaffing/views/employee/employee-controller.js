@@ -10,10 +10,14 @@ app.view.employeeController = {
             updateEmployee.execute(e.id, e.firstName, e.lastName, e.title, e.email, e.city, e.state, e.phone1, e.phone2);
         }
 
+        // function deleteEmployeeEventHandler(e){
+        //     deleteEmployee.execute(e.id);
+        // }
+
         function initEventHandlers() {
             employeeController.initEventHandler('addEmployee', addEmployeeEventHandler);
             employeeController.initEventHandler('updateEmployee', updateEmployeeEventHandler);
-            // employeeController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
+            //employeeController.initEventHandler('deleteEmployee', deleteEmployeeEventHandler);
         }
 
         employeeController.execute = function (employee) {

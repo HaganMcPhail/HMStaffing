@@ -18,8 +18,8 @@ app.main.run = function () {
         employeeController = app.view.employeeController.create(
             employeeView,
             updateEmployee,
-            addEmployee
-        //  deleteEmployee
+            addEmployee,
+            deleteEmployee
         ),
         listController = app.view.listController.create(
             listView,
@@ -36,6 +36,6 @@ app.main.run = function () {
         );
     
     loginController = app.view.loginController.create(loginView, loginUser, headerController, deleteEmployee);
-    employeeController = app.view.employeeController.create(employeeView, updateEmployee);
+    employeeController = app.view.employeeController.create(employeeView, updateEmployee, addEmployee, deleteEmployee);
     loginController.execute();
 };
