@@ -6,7 +6,7 @@ app.usecase.getEmployees = {
             execute: function (limit) {
                 var employees, oddEven;
 
-                for(var i=0;i<app.employees.length;i++){
+                for(var i=0;i<limit;i++){
                     if (i % 2 == 0) {
                         app.employees[i].oddEven = "even";
                     } else {

@@ -10,8 +10,6 @@ app.view.listController = {
 
         function addEmployeeEventHandler() {
             //alert('win');
-            //var employeeReturned = getEmployee.execute(listView.getViewData().data.employees, e.id);
-            //employeeController.execute(employeeReturned);
 
         }
 
@@ -26,6 +24,7 @@ app.view.listController = {
             listView.getViewData().data.employees = getEmployees.execute(75);
             listView.render();
             listView.initEventHandlers();
+            if(typeof app.results != 'undefined') {listView.triggerSearch(app.searchID)};
         }
 
         function initEventHandlers() {

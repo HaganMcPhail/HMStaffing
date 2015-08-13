@@ -5,14 +5,26 @@ app.usecase.searchEmployees = {
         searchEmployees = {
             execute: function (searchID) {
                 app.results = [];
+                app.searchID = searchID;
 
-                for(var i=0;i<app.employees.length;i++){
+                for(var i=0;i<100;i++){
                     if (app.employees[i].search.toLowerCase().indexOf(searchID.toLowerCase()) != -1) {
                         app.results.push(app.employees[i]);
                     }
                 }    
 
-                return app.results.slice(0, 100);
+                app.results.slice(0, 100);
+
+                for(var i=0;i<app.results.length;i++){
+                    console.log(i);
+                    if (i % 2 == 0) {
+                        app.results[i].oddEven = "even";
+                    } else {
+                        app.results[i].oddEven = "odd";
+                    }
+                }
+
+                return app.results;
             }
         };
 

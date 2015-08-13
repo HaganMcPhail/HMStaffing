@@ -14,19 +14,19 @@
                                     <div class="form-group name-hide">
                                         <label class="col-md-4 control-label" for="title">First :</label>  
                                         <div class="col-md-6">
-                                            <input id="first_name" name="first-name" type="text" value="{{first_name}}" class="form-control input-md" disabled="" />
+                                            <input id="firstName" name="first-name" type="text" value="{{first_name}}" class="form-control input-md" disabled="" />
                                         </div>
                                     </div>
                                     <div class="form-group name-hide">
                                         <label class="col-md-4 control-label" for="title">Last :</label>  
                                         <div class="col-md-6">
-                                            <input id="last_name" name="last-name" type="text" class="form-control input-md" value="{{last_name}}" disabled="" />
+                                            <input id="lastName" name="last-name" type="text" class="form-control input-md" value="{{last_name}}" disabled="" />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="title">Title :</label>  
                                         <div class="col-md-6">
-                                            <input id="job_title" name="title" type="text" class="form-control input-md" value="{{job_title}}" disabled="" />
+                                            <input id="title" name="title" type="text" class="form-control input-md" value="{{job_title}}" disabled="" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -71,14 +71,14 @@
                                 </div>
                             </div>
                             <div class="row save-btn-container">
-                                <div class="col-sm-4">
-                                    <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Save &nbsp; &nbsp; <i class="fa fa-floppy-o fa-fw"></i></button>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button" data-id="{{id}}">Save &nbsp; &nbsp; <i class="fa fa-floppy-o fa-fw"></i></button>
                                 </div>
-                                <div class="col-sm-4">
+                                <!-- <div class="col-sm-4">
                                     <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Cancel &nbsp; &nbsp; <i class="fa fa-ban fa-fw"></i></button>
-                                </div>
-                                <div class="col-sm-4">
-                                    <button class="btn btn-lg btn-primary btn-block employee-save-btn" type="button">Delete &nbsp; &nbsp; <i class="fa fa-trash-o fa-fw"></i></button>
+                                </div> -->
+                                <div class="col-sm-6">
+                                    <button class="btn btn-lg btn-primary btn-block delete" type="button" data-id="{{id}}">Delete &nbsp; &nbsp; <i class="fa fa-trash-o fa-fw"></i></button>
                                 </div>
                             </div>
                         </div>

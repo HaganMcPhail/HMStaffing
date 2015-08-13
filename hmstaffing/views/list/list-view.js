@@ -75,13 +75,6 @@ app.view.listView = {
                     }
                 }
             });
-            // $(".search input").keyup(function () {
-            //     var search = $('.search input').val();
-            //     console.log(search);
-            //     if (search != ''){
-            //         searchEmployeesEvent(search);
-            //     }
-            // });
         }
 
         function removeBackgroundImage() {
@@ -97,6 +90,10 @@ app.view.listView = {
             bindGetEmployee();
             bindAddEmployee();
             removeBackgroundImage();
+        }
+
+        listView.triggerSearch = function(searchID){
+            searchEmployeesEvent(searchID);
         }
 
         listView.initEventHandlers = function() {
