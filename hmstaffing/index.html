@@ -62,9 +62,16 @@
         <script src="entities/user.js"></script>
         <script src="entities/employee.js"></script>
         <script src="entities/employee-storage-adapter.js"></script>
+        <script>
+            function finishedLoad(){
+                setTimeout(function(){
+                    $(".se-pre-con").fadeOut(800);
+                }, 1300)                
+            };
+        </script>
 
     </head>
-    <body id="main"></body>
+    <body  onload="finishedLoad()" id="main"></body>
     
     <!-- script references -->
     <script type="text/javascript">app.run();</script>

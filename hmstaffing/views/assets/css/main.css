@@ -17,6 +17,17 @@ html, body{
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bg.png', sizingMethod='scale')";
     background-image:url(../img/bg.png);
 }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #0099cc;
+    text-align: center;
+    padding-top: 200px;
+}
 .popup-container{
     position: fixed;
     top:130px;
