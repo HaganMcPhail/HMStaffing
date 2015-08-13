@@ -28,18 +28,10 @@ app.view.employeeView = {
             });
         }
 
-        function updateEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2) {
+        function updateEmployeeEvent(employee) {
             $('#main').trigger({
                 type: 'updateEmployee',
-                id : id,
-                firstName: firstName,
-                lastName: lastName,
-                title: title,
-                email: email,
-                city: city,
-                state: state,
-                phone1: phone1,
-                phone2: phone2
+                employee: employee
             });
         }
 
@@ -77,6 +69,21 @@ app.view.employeeView = {
             return employee;
         }
 
+        function getUpdateEmployeeValues(){
+            var employee = {}
+            employee.id = app.idIndex,
+            employee.first_name = $('#myModal #firstName').val(),
+            employee.last_name = $('#myModal #lastName').val(),
+            employee.job_title = $('#myModal #title').val(),
+            employee.email = $('#myModal #email').val(),
+            employee.city = $('#myModal #city').val(),
+            employee.state = $('#myModal #state').val(),
+            employee.phone1 = $('#myModal #phone1').val(),
+            employee.phone2 = $('#myModal #phone2').val()
+            console.log(employee);
+            return employee;
+        }
+
         function bindAddEmployee(){
             var employee = {};
             $('#addEmployee .employee-save-btn').off().on('click', function(){
@@ -91,21 +98,14 @@ app.view.employeeView = {
         }
 
         function bindUpdateEmployee(){
+            var employee = {};
             $('#myModal .employee-save-btn').off().on('click', function(){
                 $('#myModal .save-btn-container').hide();
                 $('#myModal .edit-btn-container').show();
                 $('#myModal .name-hide').hide();
-                var id = $(this).attr('data-id'),
-                    firstName = $('#myModal #firstName').val(),
-                    lastName = $('#myModal #lastName').val(),
-                    title = $('#myModal #title').val(),
-                    email = $('#myModal #email').val(),
-                    city = $('#myModal #city').val(),
-                    state = $('#myModal #state').val(),
-                    phone1 = $('#myModal #phone1').val(),
-                    phone2 = $('#myModal #phone2').val()
-                $('#myModal h2.employee-name').text(firstName + ' ' + lastName);
-                updateEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2);
+                employee = getUpdateEmployeeValues();
+                $('#myModal h2.employee-name').text(employee.first_name + ' ' + employee.last_name);
+                updateEmployeeEvent(employee);
                 $('#myModal .form-employee input').prop('disabled', true);
             });
         }
