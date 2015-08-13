@@ -3,7 +3,8 @@ app.view.employeeController = {
         var employeeController = Object.create(app.usecase.usecaseBase.create());
 
         function addEmployeeEventHandler(e){
-            addEmployee.execute(e.id, e.firstName, e.lastName, e.title, e.email, e.city, e.state, e.phone1, e.phone2);
+            //console.log(e.employee);
+            addEmployee.execute(e.employee);
         }
 
         function updateEmployeeEventHandler(e){

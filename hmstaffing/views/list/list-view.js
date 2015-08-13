@@ -58,20 +58,14 @@ app.view.listView = {
         function bindSearchEmployees() {
             $('.search button').click(function () {
                 var search = $('.search input').val();
-                if (search != ''){
-                    $(this).prop('disabled', true);
-                    searchEmployeesEvent(search);
-
-                }
+                $(this).prop('disabled', true);
+                searchEmployeesEvent(search);
             });
             $(".search input").keyup(function(event){
                 if(event.keyCode == 13){
                     var search = $('.search input').val();
-                    if (search != ''){
-                        $('.search button').prop('disabled', true);
-                        searchEmployeesEvent(search);
-
-                    }
+                    $('.search button').prop('disabled', true);
+                    searchEmployeesEvent(search);
                 }
             });
         }

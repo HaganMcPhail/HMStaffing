@@ -13,7 +13,11 @@ app.view.listController = {
         }
 
         function searchEmployeesEventHandler(e) {
-            listView.getViewData().data.employees = searchEmployees.execute(e.search);
+            if (e.search != ''){
+                listView.getViewData().data.employees = searchEmployees.execute(e.search);
+            } else {
+                listView.getViewData().data.employees = getEmployees.execute(75);
+            }   
             listView.render();
             listView.initEventHandlers();
         }

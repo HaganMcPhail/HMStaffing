@@ -24,8 +24,7 @@ app.view.loginView = {
         }
 
         function bindSubmit() {
-            $('.popup-container').click(function () {
-                //alert('submit click');
+            $('.login-btn').click(function () {
                 $('span.user-message').text('');
                 sendLoginEvent(
                     $('#username').val(),

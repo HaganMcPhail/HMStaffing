@@ -21,18 +21,10 @@ app.view.employeeView = {
             });
         }
 
-        function addEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2) {
+        function addEmployeeEvent(employee) {
             $('#main').trigger({
                 type: 'addEmployee',
-                id : id,
-                firstName: firstName,
-                lastName: lastName,
-                title: title,
-                email: email,
-                city: city,
-                state: state,
-                phone1: phone1,
-                phone2: phone2
+                employee: employee
             });
         }
 
@@ -71,23 +63,29 @@ app.view.employeeView = {
             });
         }
 
+        function getAddEmployeeValues(){
+            var employee = {}
+            employee.id = app.idIndex,
+            employee.first_name = $('#addEmployee #firstName').val(),
+            employee.last_name = $('#addEmployee #lastName').val(),
+            employee.job_title = $('#addEmployee #title').val(),
+            employee.email = $('#addEmployee #email').val(),
+            employee.city = $('#addEmployee #city').val(),
+            employee.state = $('#addEmployee #state').val(),
+            employee.phone1 = $('#addEmployee #phone1').val(),
+            employee.phone2 = $('#addEmployee #phone2').val()
+            return employee;
+        }
+
         function bindAddEmployee(){
-            console.log('*** bindAddEmployee ***');
+            var employee = {};
             $('#addEmployee .employee-save-btn').off().on('click', function(){
                 $('#addEmployee .save-btn-container').hide();
                 $('#addEmployee .edit-btn-container').show();
                 $('#addEmployee .name-hide').hide();
-                var id = app.idIndex,
-                    firstName = $('#addEmployee #firstName').val(),
-                    lastName = $('#addEmployee #lastName').val(),
-                    title = $('#addEmployee #title').val(),
-                    email = $('#addEmployee #email').val(),
-                    city = $('#addEmployee #city').val(),
-                    state = $('#addEmployee #state').val(),
-                    phone1 = $('#addEmployee #phone1').val(),
-                    phone2 = $('#addEmployee #phone2').val()
-                $('#addEmployee h2.employee-name').text(firstName + ' ' + lastName);
-                addEmployeeEvent(id, firstName, lastName, title, email, city, state, phone1, phone2);
+                employee = getAddEmployeeValues();
+                $('#addEmployee h2.employee-name').text(employee.first_name + ' ' + employee.last_name);
+                addEmployeeEvent(employee);
                 $('#addEmployee').modal('hide');
             });
         }
