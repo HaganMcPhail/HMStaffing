@@ -89,14 +89,14 @@ header.header{
 .employee-record{
     margin-left:-40px;
     margin-right:-40px;
-    padding:5px 25px;
-    padding-bottom: 8px;
+    padding:2px 25px;
+    padding-bottom: 10px;
 }
 .employee-popup{
     cursor: pointer;
 }
 .employee-record > div > .row > div{
-    margin-top:15px;
+    margin-top:10px;
 }
 .employee-record .fa-trash-o{
     font-size:25px;

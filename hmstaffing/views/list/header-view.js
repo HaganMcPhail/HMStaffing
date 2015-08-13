@@ -8,12 +8,18 @@ app.view.headerView = {
             },
             headerView = Object.create(app.view.htmlView.create(xhr, viewData));
 
+            function reloadData(){
+                $('#main').trigger({
+                type: 'reloadData'
+            });
+            }
+
             function bindReloadPage(){
                 $('.logo').click(function(){
-                    location.reload();
+                    reloadData();
                 });
                 $('.sign-out').click(function(){
-                    location.reload();
+                    reloadData();
                 });
             }
 
